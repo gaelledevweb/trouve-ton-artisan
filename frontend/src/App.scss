@@ -1,0 +1,81 @@
+@import 'variables'; 
+
+// Polices
+@font-face {
+    font-family: 'Graphik';
+    src: url('./assets/fonts/Graphik-Regular-Trial.otf') format('opentype');
+    font-weight: normal; font-style: normal;
+}
+@font-face {
+    font-family: 'Graphik';
+    src: url('./assets/fonts/Graphik-Bold-Trial.otf') format('opentype');
+    font-weight: bold; font-style: normal;
+}
+
+// Styles Globaux
+body {
+    background-color: white;
+    color: #384050; 
+    font-family: 'Graphik', sans-serif;
+    margin: 0; padding: 0;
+}
+
+// Page de recherche
+#search-page {
+    background-color: $color-light-blue !important;
+    min-height: 100vh;
+    padding: 60px 0;
+    margin-top: -24px;
+
+    .category-title {
+        color: $color-secondary !important;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .artisan-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        @media (max-width: 992px) { grid-template-columns: repeat(2, 1fr) !important; }
+        @media (max-width: 768px) { grid-template-columns: 1fr !important; }
+    }
+}
+
+// Cartes
+.artisan-card {
+    background: white !important;
+    border-radius: 15px !important;
+    border: 1px solid #eef2f5 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden;
+
+    .card-img-top {
+        height: 200px !important;
+        object-fit: cover !important;
+    }
+
+    .card-body {
+        flex-grow: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 20px !important;
+
+        h5 { color: $color-secondary !important; font-weight: bold !important; }
+        
+        .btn-primary {
+            margin-top: auto !important;
+            border-radius: 50px !important;
+            background-color: $color-primary !important;
+            border: none !important;
+        }
+    }
+}
