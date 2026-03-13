@@ -1,17 +1,24 @@
 const sequelize = require('../config/database');
-const { DataTypes } = require('sequelize');
 
-// Import des modèles
+// Import de TOUS les modèles
 const Category = require('./Category');
+const Specialty = require('./Specialty'); 
 const Artisan = require('./Artisan');
 
-// Définition des relations 
-Category.hasMany(Artisan, { foreignKey: 'category_id' });
-Artisan.belongsTo(Category, { foreignKey: 'category_id' });
+// Définition des RELATIONS 
+// Une Catégorie a plusieurs Spécialités
+Category.hasMany(Specialty, { foreignKey: 'category_id' });
+Specialty.belongsTo(Category, { foreignKey: 'category_id' });
 
-const db = {};
-db.sequelize = sequelize;
-db.Category = Category;
-db.Artisan = Artisan;
+// Une Spécialité a plusieurs Artisans
+Specialty.hasMany(Artisan, { foreignKey: 'specialty_id' });
+Artisan.belongsTo(Specialty, { foreignKey: 'specialty_id' });
+
+const db = {
+    sequelize,
+    Category,
+    Specialty,
+    Artisan
+};
 
 module.exports = db;
