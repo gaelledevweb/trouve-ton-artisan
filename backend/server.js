@@ -16,6 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/artisans', artisanRoutes);
 app.use('/api/categories', categoryRoutes);
 
+sequelize.sync({ alter: true })
+  .then(() => console.log("Les tables ont été créées avec succès sur Aiven !"))
+  .catch(err => console.error("Erreur de création :", err));
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
