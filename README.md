@@ -37,4 +37,4 @@ Ouvrez un nouveau terminal :
 Bash
 cd frontend
 npm install
-npm start
+npm start 
