@@ -17,7 +17,7 @@ app.use('/api/artisans', artisanRoutes);
 app.use('/api/categories', categoryRoutes);
 
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Serveur prêt sur http://localhost:${PORT}`);
 });
