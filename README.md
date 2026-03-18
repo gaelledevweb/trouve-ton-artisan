@@ -38,3 +38,11 @@ Bash
 cd frontend
 npm install
 npm start 
+
+## Liens
+
+Voici le lien vers la maquette complète : https://www.figma.com/design/5ZHHoeAZDqGV3e5EStkozv/Trouve-ton-artisan?node-id=0-1&t=aUO9qA6wSJYWrmPA-1 
+
+Voici le lien pour le frontend : vercel : https://trouve-ton-artisan-umber.vercel.app/ 
+
+Voici le lien pour le backend : render : https://trouve-ton-artisan-0oct.onrender.com/api/artisans 
